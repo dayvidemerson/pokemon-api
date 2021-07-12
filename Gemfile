@@ -36,5 +36,13 @@ group :development do
   gem 'spring'
 end
 
+group :development, :test do
+  gem "rspec-rails", "~> 5.0"
+  gem "vcr", "~> 6.0"
+  gem "simplecov", "~> 0.21.2"
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "httparty", "~> 0.18.1"

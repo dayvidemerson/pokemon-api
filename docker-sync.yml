@@ -1,0 +1,8 @@
+version: "2"
+
+syncs:
+  lb-entrevista-app-native-osx-sync:
+    src: "."
+    sync_excludes: [".git", ".dockerignore", ".byebug_history", "log/*", "tmp/*"]
+  lb-entrevista-bundle-native-osx-sync:
+    src: "./tmp/docker/bundle"
