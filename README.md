@@ -1,24 +1,115 @@
-# README
+# Pokemon API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Using native system
 
-Things you may want to cover:
+### Dependencies
 
-* Ruby version
+- Ruby 2.X
+- Bundler 2.X
+- SQLite
 
-* System dependencies
+### Setup
 
-* Configuration
+Just run:
 
-* Database creation
+```
+bundle install
+```
 
-* Database initialization
+### Starting server
 
-* How to run the test suite
+Just run:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+rails server
+```
 
-* Deployment instructions
+### Running tests
 
-* ...
+#### Running all tests
+
+Just run:
+
+```
+rspec
+```
+
+#### Running specific tests
+
+Test full path:
+
+```
+rspec spec/path
+```
+
+Test one file:
+
+```
+rspec spec/path/filename_spec.rb
+```
+
+Test one line on file:
+
+```
+rspec spec/path/filename_spec.rb:10
+```
+
+## Using Docker
+
+### Dependencies
+
+- [Docker](https://docs.docker.com/engine/install/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- [Docker Sync](https://docker-sync.readthedocs.io/)
+
+### Starting server
+
+Just run:
+
+```
+make start
+```
+
+### Running tests
+
+#### Running all tests
+
+Just run:
+
+```
+make tests
+```
+
+#### Running specific tests
+
+Just run:
+
+```
+make tests TEST_PATH=spec/controllers/
+```
+
+### Daemon server
+
+#### Starting server
+
+Just run:
+
+```
+make start-daemon
+```
+
+#### Stopping server
+
+Just run:
+
+```
+make stop-daemon
+```
+
+#### Showing logs
+
+Just run:
+
+```
+make logs
+```
