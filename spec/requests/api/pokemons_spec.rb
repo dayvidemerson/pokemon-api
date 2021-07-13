@@ -2,39 +2,39 @@
 
 require 'rails_helper'
 
-RSpec.describe Pokemon, type: :model do
-  describe '.request(slug)' do
+RSpec.describe 'Api::Pokemons', type: :request do
+  describe 'GET /show' do
     context 'when success' do
       let(:content_response) { %w[imposter limber] }
 
-      let!(:response) do
+      before(:all) do
         VCR.use_cassette('poke_api/pokemons/get/success') do
-          described_class.request('ditto')
+          get '/api/pokemons/ditto'
         end
       end
 
       it 'returns success status code' do
-        expect(response[:status]).to eq(200)
+        expect(response).to have_http_status(:ok)
       end
 
       it 'returns array of abilities' do
-        expect(response[:content]).to eq(content_response)
+        expect(response.parsed_body).to eq(content_response)
       end
     end
 
     context 'when not found' do
-      let!(:response) do
+      before(:all) do
         VCR.use_cassette('poke_api/pokemons/get/not_found') do
-          described_class.request('fulano')
+          get '/api/pokemons/fulano'
         end
       end
 
       it 'returns success status code' do
-        expect(response[:status]).to eq(404)
+        expect(response).to have_http_status(:not_found)
       end
 
       it 'returns array of abilities' do
-        expect(response[:content]).to eq(error: 'Not Found')
+        expect(response.parsed_body).to eq('error' => 'Not Found')
       end
     end
   end

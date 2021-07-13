@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pokeapi.co/api/v2/pokemon/fulano
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Tue, 13 Jul 2021 00:53:43 GMT
+      Content-Type:
+      - text/plain; charset=utf-8
+      Content-Length:
+      - '9'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=3600, s-maxage=3600
+      Etag:
+      - W/"9-0gXL1ngzMqISxa6S1zx3F4wtLyg"
+      Function-Execution-Id:
+      - 4ea70sa0m0ad
+      X-Cloud-Trace-Context:
+      - 71f3a3b67fd1ca2bf28ee1f2a37d7ab0
+      X-Powered-By:
+      - Express
+      X-Served-By:
+      - cache-cgh11178-CGH
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1626137622.879626,VS0,VE1688
+      Vary:
+      - Accept-Encoding, x-fh-requested-host, accept-encoding
+      Cf-Cache-Status:
+      - MISS
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=%2FrdRzrpd4IZmD%2BBXACg2b%2B52UkXj7iHKqDbwXG8mpapITFlyLsGtRXgRz0ExIYcWWzTb1h6msxc8ZjpZR9wCTlCDLIrrahXb7W00b4gIhWvuSkgdxmUP6mI1ATbmlCOpS3GZxA%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 66de8928883df5fb-GRU
+      Alt-Svc:
+      - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443";
+        ma=86400
+    body:
+      encoding: UTF-8
+      string: Not Found
+  recorded_at: Tue, 13 Jul 2021 00:53:43 GMT
+recorded_with: VCR 6.0.0

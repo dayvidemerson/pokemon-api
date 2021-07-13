@@ -1,19 +1,17 @@
-class Api::PokemonsController < ApplicationController
-  before_action :set_poke_api
+# frozen_string_literal: true
 
-  def show
-    response = Pokemon.request(permitted_params[:pokemon])
+module Api
+  class PokemonsController < ApplicationController
+    def show
+      response = Pokemon.request(permitted_params[:pokemon])
 
-    render json: response[:content], status: response[:status]
-  end
+      render json: response[:content], status: response[:status]
+    end
 
-  private
+    private
 
-  def permitted_params
-    params.permit(:pokemon)
-  end
-
-  def set_poke_api
-    @poke_api ||= PokeApi.new
+    def permitted_params
+      params.permit(:pokemon)
+    end
   end
 end
